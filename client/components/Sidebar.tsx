@@ -2,6 +2,8 @@
 
 import { usePathname } from 'next/navigation';
 import { useMemo } from 'react';
+import { HiHome } from 'react-icons/hi'
+import { BiSearch } from 'react-icons/bi'
 
 interface SidebarProps {
     children: React.ReactNode;
@@ -12,19 +14,21 @@ const Sidebar: React.FC<SidebarProps> = ({
     children
 }) => {
 
-    const pathName = usePathname();
+    const pathname = usePathname();
     const routes = useMemo(() => [
         {
+            icon: HiHome,
             label: 'Home',
-            active: pathName !== '/search',
+            active: pathname !== '/search',
             href: '/',
         },
         {
+            icon: BiSearch,
             label: 'Search',
-            active: pathName === '/search',
+            active: pathname === '/search',
             href: '/search',
         }
-    ], [])
+    ], [pathname])
 
     return (
         <div>{children}</div>
