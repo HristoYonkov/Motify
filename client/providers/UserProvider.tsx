@@ -1,5 +1,4 @@
 'use client';
-
 import { MyUserContextProvider } from "@/app/hooks/useUser";
 
 interface IUserProviderProps {
@@ -9,7 +8,7 @@ interface IUserProviderProps {
 const UserProvider: React.FC<IUserProviderProps> = ({
     children
 }) => {
-    
+
     return (
         <MyUserContextProvider>
             {children}
