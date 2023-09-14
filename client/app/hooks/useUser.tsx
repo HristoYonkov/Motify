@@ -44,6 +44,7 @@ export const MyUserContextProvider = (props: IProps) => {
     useEffect(() => {
         if (user && !isLoadingData && !userDetails && !subscription) {
             setIsLoadingData(true);
+            
             Promise.allSettled([getUserDetails(), getSubscription()]).then(
                 (results) => {
                     const userDetailsPromise = results[0];
