@@ -18,22 +18,25 @@ const Modal: React.FC<ModalProps> = ({
     children
 }) => {
   return (
-    <Dialog.Root
-        open={isOpen}
-        defaultOpen={isOpen}
-        onOpenChange={onChange}
-    >
-        <Dialog.Portal>
-            <Dialog.Overlay
-                className='
-                bg-neutral-900
-                backdrop-blur-sm
-                fixed
-            '
-            />
-        </Dialog.Portal>
-    </Dialog.Root>
+    <div>
+        ModalComponent!
+    </div>
   )
 }
 
 export default Modal
+    // <Dialog.Root
+    //     open={isOpen}
+    //     defaultOpen={isOpen}
+    //     onOpenChange={onChange}
+    // >
+    //     <Dialog.Portal>
+    //         <Dialog.Overlay
+    //             className='
+    //             bg-neutral-900
+    //             backdrop-blur-sm
+    //             fixed
+    //         '
+    //         />
+    //     </Dialog.Portal>
+    // </Dialog.Root>
