@@ -9,7 +9,7 @@ const ModalProvider = () => {
     useEffect(() => {
         setIsMounted(true);
     }, []);
-
+    
     if (!isMounted) {
         return null;
     }
@@ -22,7 +22,7 @@ const ModalProvider = () => {
                 isOpen
                 onChange={() => { }}
             >
-                Test Children
+                Test Children!
             </Modal>
         </>
     );
