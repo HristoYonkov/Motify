@@ -19,7 +19,11 @@ const Modal: React.FC<ModalProps> = ({
 }) => {
 
   return (
-    <Dialog.Root>
+    <Dialog.Root
+      open={isOpen}
+      defaultOpen={isOpen}
+      onOpenChange={onChange}
+    >
       <Dialog.Portal>
         <Dialog.Overlay className='
           bg-neutral-900/90
