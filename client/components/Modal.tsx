@@ -19,27 +19,29 @@ const Modal: React.FC<ModalProps> = ({
 }) => {
 
   return (
-    <Dialog.Root
-      open={isOpen}
-      defaultOpen={isOpen}
-      onOpenChange={onChange}
-    >
-      <Dialog.Portal>
-        <Dialog.Overlay className='
+    <div>
+      <Dialog.Root
+        open={isOpen}
+        defaultOpen={isOpen}
+        onOpenChange={onChange}
+      >
+        <Dialog.Portal>
+          <Dialog.Overlay className="
           bg-neutral-900/90
           backdrop-blur-sm
           fixed
           inset-0
-          z-10
-          '
-        />
-        <Dialog.Content>
-          <Dialog.Title>
-            {title}
-          </Dialog.Title>
-        </Dialog.Content>
-      </Dialog.Portal>
-    </Dialog.Root>
+          "
+          />
+          <Dialog.Content>
+            <Dialog.Title>
+              {title}
+            </Dialog.Title>
+          </Dialog.Content>
+        </Dialog.Portal>
+      </Dialog.Root>
+      {title}
+    </div>
   );
 }
 
