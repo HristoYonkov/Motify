@@ -30,9 +30,14 @@ const Modal: React.FC<ModalProps> = ({
           backdrop-blur-sm
           fixed
           inset-0
+          z-10
           '
         />
-
+        <Dialog.Content>
+          <Dialog.Title>
+            {title}
+          </Dialog.Title>
+        </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>
   );
