@@ -19,7 +19,7 @@ const AuthModal = () => {
             isOpen
             onChange={() => { }}
         >
-            <Auth 
+            <Auth
                 supabaseClient={supabaseClient}
                 theme="dark"
                 providers={['github']}
