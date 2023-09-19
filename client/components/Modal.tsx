@@ -92,6 +92,7 @@ const Modal: React.FC<ModalProps> = ({
                 rounded-full 
                 focus:outline-none
               '
+              aria-label="Close"
             >
               <IoMdClose />
             </button>
