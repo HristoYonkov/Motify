@@ -13,10 +13,3 @@ const useAuthModal = create<AuthModalStore>((set) => ({
 }));
 
 export default useAuthModal;
-
-// try to use this approach
-// return {
-//     isOpen: false,
-//     onOpen: () => set({ isOpen: true }),
-//     onClose: () => set({ isOpen: false })
-// }
