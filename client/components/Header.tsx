@@ -5,9 +5,11 @@ import { twMerge } from "tailwind-merge";
 import { RxCaretLeft, RxCaretRight } from 'react-icons/rx';
 import { HiHome } from "react-icons/hi";
 import { BiSearch } from "react-icons/bi";
+import { useSupabaseClient } from "@supabase/auth-helpers-react";
 
 import useAuthModal from "@/hooks/useAuthModal";
 import Button from "./Button";
+import { useUser } from "@/hooks/useUser";
 
 interface HeaderProps {
     children: React.ReactNode;
@@ -20,6 +22,9 @@ const Header: React.FC<HeaderProps> = ({
 }) => {
     const authModal = useAuthModal();
     const router = useRouter();
+
+    const supabaseClient = useSupabaseClient();
+    const { user } = useUser();
 
     const handleLogout = () => {
 
