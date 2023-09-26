@@ -16,6 +16,8 @@ const Library = () => {
             return authModal.onOpen();
         }
 
+        // TODO: Check for subscription?
+
         return uploadModal.onOpen();
     }
 
