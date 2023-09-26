@@ -1,10 +1,20 @@
+import { forwardRef } from 'react';
 
+interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> { };
 
-
-const Input = () => {
+const Input = forwardRef<HTMLInputElement, InputProps>(({
+    className,
+    type,
+    disabled,
+    ...props
+}, ref) => {
     return (
-        <div>Input!</div>
+        <input
+            
+        />
     )
-}
+});
+
+Input.displayName = "Input";
 
 export default Input;
