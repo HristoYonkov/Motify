@@ -18,7 +18,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
                 rounded-md
                 bg-neutral-700
                 border
-                border-transperant
+                border-transparent
                 px-3
                 py-3
                 text-sm
@@ -33,7 +33,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
             `,
                 className
             )}
-            
+
             disabled={disabled}
             ref={ref}
             {...props}
