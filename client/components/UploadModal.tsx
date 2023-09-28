@@ -68,8 +68,20 @@ const UploadModal = () => {
                     id='song'
                     type='file'
                     disabled={isLoading}
-                    {...register('song', { required: true })}
                     accept='.mp3'
+                    {...register('song', { required: true })}
+                />
+                </div>
+                <div>
+                    <div className='pb-1'>
+                        Select a image..
+                    </div>
+                    <Input
+                    id='image'
+                    type='file'
+                    disabled={isLoading}
+                    accept='image/*'
+                    {...register('image', { required: true })}
                 />
                 </div>
             </form>
