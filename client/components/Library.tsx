@@ -2,10 +2,13 @@
 
 import { TbPlaylist } from 'react-icons/tb';
 import { AiOutlinePlus } from 'react-icons/ai';
+
 import useAuthModal from '@/hooks/useAuthModal';
 import { useUser } from '@/hooks/useUser';
 import useUploadModal from '@/hooks/useUploadModal';
 import { ISong } from '@/types';
+
+import MediaItem from './MediaItem';
 
 interface LibraryProps {
     songs: ISong[];
