@@ -63,7 +63,7 @@ const Liked = async () => {
           </div>
         </div>
       </Header>
-      <LikedContent />
+      <LikedContent songs={songs} />
     </div>
   )
 }
