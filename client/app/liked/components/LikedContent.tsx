@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { useUser } from "@/hooks/useUser";
 import { ISong } from "@/types";
 import MediaItem from "@/components/MediaItem";
+import LikeButton from "@/components/LikeButton";
 
 interface LikedContentProps {
     songs: ISong[];
@@ -49,6 +50,7 @@ const LikedContent: React.FC<LikedContentProps> = ({ songs }) => {
                             data={song}
                         />
                     </div>
+                    <LikeButton songId={song.id}/>
                 </div>
             ))}
         </div>
