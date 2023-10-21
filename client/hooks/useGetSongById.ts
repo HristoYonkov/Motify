@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useSessionContext } from '@supabase/auth-helpers-react';
 import toast from 'react-hot-toast';
 
@@ -18,10 +18,10 @@ const useGetSongById = (id?: string) => {
 
         const fetchSong = async () => {
             const { data, error } = await supabaseClient
-            .from('songs')
-            .select('*')
-            .eq('id', id)
-            .single();
+                .from('songs')
+                .select('*')
+                .eq('id', id)
+                .single();
 
             if (error) {
                 setIsLoading(false);
@@ -33,7 +33,12 @@ const useGetSongById = (id?: string) => {
         }
 
         fetchSong();
-    }, [id, supabaseClient])
+    }, [id, supabaseClient]);
+
+    return useMemo(() => ({
+        isLoading,
+        song
+    }), [isLoading, song]);
 }
 
-export default useGetSongById
+export default useGetSongById;
