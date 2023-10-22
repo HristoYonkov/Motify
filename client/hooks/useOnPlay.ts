@@ -16,7 +16,9 @@ const useOnPlay = (songs: ISong[]) => {
 
         player.setId(id);
         player.setIds(songs.map((song) => song.id));
-    }    
+    }
+
+    return onPlay;
 }
 
 export default useOnPlay;
