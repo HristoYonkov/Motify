@@ -16,7 +16,7 @@ const Player = () => {
 
     return (
         <div className="
-            fixe
+            fixed
             bottom-0
             bg-black
             w-full
