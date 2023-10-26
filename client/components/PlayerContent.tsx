@@ -7,7 +7,6 @@ import { useState, useEffect } from 'react';
 import useSound from 'use-sound';
 
 import { ISong } from "@/types";
-
 import usePlayer from '@/hooks/usePlayer';
 
 import MediaItem from "./MediaItem";
