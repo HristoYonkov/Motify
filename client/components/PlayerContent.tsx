@@ -1,7 +1,7 @@
 'use client';
 
 import { BsPauseFill, BsPlayFill } from 'react-icons/bs'
-import { AiFillStepBackward } from 'react-icons/ai';
+import { AiFillStepBackward, AiFillStepForward } from 'react-icons/ai';
 
 import { ISong } from "@/types";
 
@@ -25,6 +25,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({ song, songUrl }) => {
                     <LikeButton songId={song.id} />
                 </div>
             </div>
+
             <div className="flex md:hidden col-auto w-full justify-end items-center">
                 <div onClick={() => { }} className="
                     h-10
@@ -42,7 +43,33 @@ const PlayerContent: React.FC<PlayerContentProps> = ({ song, songUrl }) => {
             </div>
 
             <div className='hidden h-full md:flex justify-center items-center w-full max-w-[722px] gap-x-6'>
-                <AiFillStepBackward />
+                <AiFillStepBackward
+                    onClick={() => { }}
+                    size={30}
+                    className="text-neutral-400 cursor-pointer hover:text-white transition"
+                />
+                <div onClick={() => {}} className='
+                    flex 
+                    items-center
+                    justify-center
+                    h-10
+                    w-10
+                    rounded-full 
+                    bg-white
+                    p-1
+                    cursor-pointer
+                '>
+                    <Icon size={30} className="text-black" />
+                </div>
+                <AiFillStepForward
+                    onClick={() => { }}
+                    size={30}
+                    className="text-neutral-400 cursor-pointer hover:text-white transition"
+                />
+            </div>
+
+            <div>
+                
             </div>
         </div>
     )
