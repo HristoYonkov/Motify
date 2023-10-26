@@ -2,11 +2,13 @@
 
 import { BsPauseFill, BsPlayFill } from 'react-icons/bs'
 import { AiFillStepBackward, AiFillStepForward } from 'react-icons/ai';
+import { HiSpeakerXMark, HiSpeakerWave } from 'react-icons/hi2';
 
 import { ISong } from "@/types";
 
 import MediaItem from "./MediaItem";
 import LikeButton from "./LikeButton";
+import Slider from './Slider';
 
 interface PlayerContentProps {
     song: ISong;
@@ -15,7 +17,7 @@ interface PlayerContentProps {
 
 const PlayerContent: React.FC<PlayerContentProps> = ({ song, songUrl }) => {
     const Icon = false ? BsPauseFill : BsPlayFill;
-
+    const VolumeIcon = true ? HiSpeakerXMark : HiSpeakerWave;
 
     return (
         <div className="grid grid-cols-2 md:grid-cols-3 h-full">
@@ -48,7 +50,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({ song, songUrl }) => {
                     size={30}
                     className="text-neutral-400 cursor-pointer hover:text-white transition"
                 />
-                <div onClick={() => {}} className='
+                <div onClick={() => { }} className='
                     flex 
                     items-center
                     justify-center
@@ -70,7 +72,8 @@ const PlayerContent: React.FC<PlayerContentProps> = ({ song, songUrl }) => {
 
             <div className='hidden md:flex w-full justify-end pr-2'>
                 <div className='flex items-center gap-x-2 w-[120px]'>
-                    <VolumeIcon />
+                    <VolumeIcon onClick={() => {}} size={33} className='cursor-pointer' />
+                    <Slider />
                 </div>
             </div>
         </div>
