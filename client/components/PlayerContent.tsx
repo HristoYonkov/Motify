@@ -3,7 +3,7 @@
 import { BsPauseFill, BsPlayFill } from 'react-icons/bs'
 import { AiFillStepBackward, AiFillStepForward } from 'react-icons/ai';
 import { HiSpeakerXMark, HiSpeakerWave } from 'react-icons/hi2';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import useSound from 'use-sound';
 
 import { ISong } from "@/types";
@@ -57,7 +57,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({ song, songUrl }) => {
         player.setId(prevSong);
     }
 
-    const [play, { pasue, sound }] = useSound(
+    const [play, { pause, sound }] = useSound(
         songUrl,
         {
             volume: volume,
@@ -71,6 +71,30 @@ const PlayerContent: React.FC<PlayerContentProps> = ({ song, songUrl }) => {
         }
     );
 
+    useEffect(() => {
+        sound?.play();
+
+        return () => {
+            sound?.unload();
+        }
+    }, [sound]);
+
+    const handlePlay = () => {
+        if (!isPlaying) {
+            play();
+        } else {
+            pause();
+        }
+    }
+
+    const toggleMute = () => {
+        if (volume === 0 ) {
+            setVolume(1);
+        } else {
+            setVolume(0);
+        }
+    }
+
     return (
         <div className="grid grid-cols-2 md:grid-cols-3 h-full">
             <div className="flex w-full justify-start">
@@ -81,7 +105,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({ song, songUrl }) => {
             </div>
 
             <div className="flex md:hidden col-auto w-full justify-end items-center">
-                <div onClick={() => { }} className="
+                <div onClick={handlePlay} className="
                     h-10
                     w-10
                     flex
@@ -102,7 +126,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({ song, songUrl }) => {
                     size={30}
                     className="text-neutral-400 cursor-pointer hover:text-white transition"
                 />
-                <div onClick={() => { }} className='
+                <div onClick={handlePlay} className='
                     flex 
                     items-center
                     justify-center
@@ -124,8 +148,8 @@ const PlayerContent: React.FC<PlayerContentProps> = ({ song, songUrl }) => {
 
             <div className='hidden md:flex w-full justify-end pr-2'>
                 <div className='flex items-center gap-x-2 w-[120px]'>
-                    <VolumeIcon onClick={() => { }} size={33} className='cursor-pointer' />
-                    <Slider />
+                    <VolumeIcon onClick={toggleMute} size={33} className='cursor-pointer' />
+                    <Slider value={volume} onChange={(value) => setVolume(value)} />
                 </div>
             </div>
         </div>
