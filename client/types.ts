@@ -9,16 +9,6 @@ export interface ISong {
     image_path: string;
 }
 
-export interface IUserDetails {
-    id: string;
-    first_name: string;
-    last_name: string;
-    full_name?: string;
-    avatar_url?: string;
-    billing_address?: Stripe.Address;
-    payment_method?: Stripe.PaymentMethod[Stripe.PaymentMethod.Type]
-}
-
 export interface IProduct {
     id: string;
     active?: boolean;
@@ -41,6 +31,25 @@ export interface IPrice {
     trial_period_days?: number | null;
     metadata?: Stripe.Metadata;
     product?: IProduct;
+}
+
+export interface ICustomer {
+    id: string;
+    stripe_customer_id?: string;
+}
+
+export interface IUserDetails {
+    id: string;
+    first_name: string;
+    last_name: string;
+    full_name?: string;
+    avatar_url?: string;
+    billing_address?: Stripe.Address;
+    payment_method?: Stripe.PaymentMethod[Stripe.PaymentMethod.Type]
+}
+
+export interface IProductWithPrice extends IProduct {
+    prices?: IPrice[];
 }
 
 export interface ISubscription {
