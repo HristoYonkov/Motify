@@ -32,7 +32,6 @@ const SubscribeModal: React.FC<SubscribeModalProps> = ({
 }) => {
   const subscribeModal = useSubscribeModal();
   const { user, isLoading, subscription } = useUser();
-
   const [priceIdLoading, setPriceIdLoading] = useState<string>();
 
   const onChange = (open: boolean) => {
